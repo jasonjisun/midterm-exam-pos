@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>pos sofa</title>
+  </head>
+  <body>
+    <div class="bg-dark p-3">
+      <div class="row mx-0 py-3 bg-light">
+        <div class="col-sm-8">
+          <a class="btn btn-danger btn-md rounded-pill" href="index.html"
+            >Back to Home</a
+          >
+          <p>
+            Order #88
+            <small class="text-muted">Today, 7 Apr 2024, 3:38PM</small>
+          </p>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Magna Tiste', 3.99, 'images/1.png');"
+              >
+                <img src="images/1.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.99</strong>
+                    <hr />
+                    Magna Tiste
+                  </h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae asperiores repellendus, consequatur soluta
+                    explicabo quidem voluptatibus maiores voluptates.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Aut Luia', 3.55, 'images/2.png');"
+              >
+                <img src="images/2.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.55</strong>
+                    <hr />
+                    Aut Luia
+                  </h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dignissimos, rerum?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Est Eligendi', 3.75, 'images/3.png');"
+              >
+                <img src="images/3.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.75</strong>
+                    <hr />
+                    Est Eligendi
+                  </h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Autem ipsum possimus, suscipit esse libero molestiae!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Eos Luibusdam', 3.39, 'images/4.png');"
+              >
+                <img src="images/4.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.39</strong>
+                    <hr />
+                    Eos Luibusdam
+                  </h5>
+                  <p class="card-text">
+                    This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a
+                    little bit longer.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Eos Luibusmad', 3.50, 'images/5.png');"
+              >
+                <img src="images/5.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.50</strong>
+                    <hr />
+                    Eos Luibusmad
+                  </h5>
+                  <p class="card-text">
+                    This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a
+                    little bit longer.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div
+                draggable="false"
+                class="card h-100"
+                onclick="orderbasket('Laboriosam Direva', 3.18, 'images/6.png');"
+              >
+                <img src="images/6.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <strong>$3.18</strong>
+                    <hr />
+                    Laboriosam Direva
+                  </h5>
+                  <p class="card-text">
+                    This is a longer card with supporting text below as a
+                    natural lead-in to additional content. This content is a
+                    little bit longer.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="d-flex justify-content-between align-items-center">
+                <span>Order</span>
+                <button
+                  onclick="orderbasketClear()"
+                  class="btn btn-sm btn-danger"
+                >
+                  Clear
+                </button>
+              </h5>
+              <hr />
+              <ul
+                id="orderlist"
+                class="list-unstyled"
+                style="height: 50vh; overflow-y: auto"
+                w
+              ></ul>
+              <hr />
+              <ul class="list-unstyled">
+                <li class="d-flex justify-content-between align-items-center">
+                  <big>Total Items:</big
+                  ><big class="fw-bold" id="totalitems" class="card-text"
+                    >0</big
+                  >
+                </li>
+                <li class="d-flex justify-content-between align-items-center">
+                  <big>Total Amount:</big
+                  ><big class="fw-bold"
+                    >$<span id="totalcost" class="card-text">0.00</span></big
+                  >
+                </li>
+                <li>
+                  <hr />
+                  <button class="btn btn-primary btn-lg w-100 rounded-pill">
+                    CHECK OUT
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const orderitemsarray = [];
+      const orderPriceArray = [];
+      const orderarray = [];
+
+      function orderbasket(itemname, itemprice, itemimage) {
+        orderitemsarray.push(itemname);
+        orderPriceArray.push(itemprice);
+        orderarray.push(itemname, itemprice, itemimage);
+
+        let orderlist = document.getElementById("orderlist");
+
+        // Create the LI tag
+        const orderitem = document.createElement("li");
+        orderitem.className =
+          "d-flex justify-content-between align-items-center";
+
+        const orderitempricespan = document.createElement("span");
+
+        // Add a text to LI
+        const orderitemname = document.createTextNode(itemname);
+        const orderitemprice = document.createTextNode(" $" + itemprice);
+
+        orderitempricespan.className = "text-danger";
+
+        // Price text node
+        orderitempricespan.appendChild(orderitemprice);
+
+        //IMAGE SECTION
+
+        //step 1
+        const orderitemimgtag = document.createElement("img");
+
+        orderitemimgtag.src = itemimage;
+
+        //classname w-25
+        orderitemimgtag.className = "w-25";
+
+        const orderitemleftsidespan = document.createElement("span");
+
+        //combine this
+        //appendChild
+        orderitemleftsidespan.appendChild(orderitemimgtag);
+
+        // Attach the
+        orderitemleftsidespan.appendChild(orderitemname);
+        //end of combine
+
+        orderitem.appendChild(orderitemleftsidespan);
+
+        //
+        orderitem.appendChild(orderitempricespan);
+
+        // Attach or APPEND the LI tag (child) to parent id=ORDERLIST
+        orderlist.appendChild(orderitem);
+
+        totalitems();
+        costitems();
+      }
+
+      function totalitems() {
+        document.getElementById("totalitems").innerText =
+          orderitemsarray.length;
+      }
+
+      function costitems() {
+        if (orderPriceArray.length === 0) {
+          document.getElementById("totalcost").innerText = 0;
+        } else {
+          document.getElementById("totalcost").innerText = orderPriceArray
+            .reduce(sumarray)
+            .toFixed(2);
+          function sumarray(total, num) {
+            return total + num;
+          }
+        }
+      }
+
+      function orderbasketClear() {
+        let orderlist = document.getElementById("orderlist");
+        orderlist.innerHTML = "";
+        orderitemsarray.length = 0;
+        orderPriceArray.length = 0;
+        orderarray.length = 0;
+        totalitems();
+        costitems();
+      }
+
+      // <li>
+      //   <img src="images/1.png" style="width: 50px" />
+      //   Cappucino
+      //   <span class="text-danger">$3.50</span>
+      // </li>;
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
